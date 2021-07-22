@@ -280,10 +280,15 @@ class SliderValidator(object):
                     catwalk.append(step)
 
                 # 二级步态修正
-                while abs(sum(catwalk) + position) > 3:
+                stance = sum(catwalk) + position
+                while abs(stance) > 3:
+                    # 踏出对抗步伐
                     step = - (position / abs(position))
                     ActionChains(self.api).move_by_offset(xoffset=step, yoffset=0).perform()
+                    # 更新参数
                     catwalk.append(step)
+                    position += step
+                    stance = sum(catwalk) + position
             debugger_map.update({'catwalk': catwalk})
         # step2.2: operator于一维空间中的位置回衡 基于极限收敛
         if momentum_convergence:
