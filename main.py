@@ -13,4 +13,4 @@ if __name__ == '__main__':
     # 运行GeeTest_v2滑动验证测试案例
     demo_geetest2()
     # 运行GeeTest_v3滑动验证测试案例
-    # demo_geetest3()
+    demo_geetest3()
