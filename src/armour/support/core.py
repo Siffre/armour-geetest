@@ -281,7 +281,7 @@ class SliderValidator(object):
 
                 # 二级步态修正
                 stance = sum(catwalk) + position
-                while abs(stance) > 3:
+                while abs(stance) > 3 and position != 0:
                     # 踏出对抗步伐
                     step = - (position / abs(position))
                     ActionChains(self.api).move_by_offset(xoffset=step, yoffset=0).perform()
