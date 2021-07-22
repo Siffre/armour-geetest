@@ -17,9 +17,10 @@ from .demo_base import CatWalk
 URLS_GT3 = [
     # 需要流量过墙
     # 'https://www.jssr.vip/auth/register',
+    # 'https://blx.best/auth/register',
+    # 'https://www.ppyun.co/auth/register'
     # 国内可访问
-    'https://blx.best/auth/register',
-    'https://www.ppyun.co/auth/register'
+    "https://www.kaikaiyun.icu/auth/register",
 ]
 
 

@@ -272,21 +272,30 @@ class SliderValidator(object):
                 debugger_map.update({'rotation_factor': rotation_factor})
         # step2.2: operator于一维空间中的位置回衡 基于极限收敛
         if momentum_convergence:
+            # 通过强化学习拟合出的收敛区间
             convergence_region = list(range(-9, -2))
+            # 补偿算子初始化，作为momentum收敛后的单步步长回衡姿态
             inertial = 0
-            if position not in convergence_region:
+            # 当算子处于低置信度空间内，使用手工调平的方法回衡
+            # 当boundary落在此区间内时，缺口识别有极大概率出现偏差，使用手工调平的方法回衡姿态
+            # 若出现遮挡，回衡成功率较高
+            # 若识别错误，回衡成功率必然为0
+            if self.boundary in [48, 49, ]:
+                if abs(position) <= 1:
+                    inertial = random.randint(-8, -5)
+            # 当算子处于收敛空间外时，使用运动补偿的方法回落姿态
+            elif position not in convergence_region:
                 if position < convergence_region[0]:
                     inertial = random.randint(convergence_region[0] - position, convergence_region[-1] - position)
                 else:
                     inertial = -random.randint(position - convergence_region[-1], position - convergence_region[0])
-                ActionChains(self.api).move_by_offset(xoffset=inertial, yoffset=0).perform()
-            if self.boundary in [48, 49, ]:
-                ActionChains(self.api).move_by_offset(xoffset=random.randint(-5, -2), yoffset=0).perform()
+            # 将补偿算子inertial作为单步像素距离移动
+            ActionChains(self.api).move_by_offset(xoffset=inertial, yoffset=0).perform()
             debugger_map.update({'inertial': inertial})
         # 打印参数表
         if self.debug:
             print(f"{self.business_name}: {debugger_map}")
-        # 放开圆球
+        # 松开滑块 统计通过率
         ActionChains(self.api).release(slider).perform()
         time.sleep(1.5)
 
