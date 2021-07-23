@@ -1,9 +1,9 @@
 # ArmourGeeTest
 
 >[TOS]
->- 本项仅供交流学习，有疑问请在[issue](https://github.com/QIN2DIM/armour-geetest/issues)中提出；
+>- 本项目仅供交流学习，有疑问请在[issue](https://github.com/QIN2DIM/armour-geetest/issues)中提出；
 >- 本项目不提供面向任何商业需求的版本迭代；
->- 关于本项目的分享请遵循Apache-2.0 License；
+>- 关于本项目源码的使用请遵循Apache-2.0 License；
 >- 禁止任何人使用本项目及其分支提供任何形式的收费代理服务。
 
 ## :carousel_horse: 项目简介
