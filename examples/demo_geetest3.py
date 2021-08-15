@@ -14,15 +14,6 @@ from src.armour import GeeTest3
 from src.config import FULL_IMG_PATH, NOTCH_IMG_PATH, CHROMEDRIVER_PATH
 from .demo_base import CatWalk
 
-URLS_GT3 = [
-    # 需要流量过墙
-    # 'https://www.jssr.vip/auth/register',
-    # 'https://blx.best/auth/register',
-    # 'https://www.ppyun.co/auth/register'
-    # 国内可访问
-    "https://www.kaikaiyun.icu/auth/register",
-]
-
 
 class GeeTest3Walk(CatWalk):
     def __init__(self, url, silence=False, chromedriver_path=None):
@@ -54,10 +45,9 @@ class GeeTest3Walk(CatWalk):
             api.quit()
 
 
-def demo_geetest3():
-    import random
+def demo_geetest3(url):
     GeeTest3Walk(
-        random.choice(URLS_GT3),
+        url=url,
         silence=False,
         chromedriver_path=CHROMEDRIVER_PATH
     ).go()

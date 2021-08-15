@@ -9,14 +9,6 @@ from src.armour import GeeTest2
 from src.config import FULL_IMG_PATH, NOTCH_IMG_PATH, CHROMEDRIVER_PATH
 from .demo_base import CatWalk
 
-URLS_GT2 = [
-    # 需要流量过墙
-    # 'https://xn--9kq568dvkr.com/auth/register',
-    # 'https://unexpecteddomainnamepro.xyz/auth/register',
-    # 国内可访问
-    'https://sopen.xyz/auth/register'
-]
-
 
 class GeeTest2Walk(CatWalk):
     def __init__(self, url, silence=False, chromedriver_path=None):
@@ -43,10 +35,9 @@ class GeeTest2Walk(CatWalk):
             api.quit()
 
 
-def demo_geetest2():
-    import random
+def demo_geetest2(url):
     GeeTest2Walk(
-        random.choice(URLS_GT2),
+        url=url,
         silence=False,
         chromedriver_path=CHROMEDRIVER_PATH
     ).go()
