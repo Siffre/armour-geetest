@@ -23,7 +23,7 @@ URLS_GT3 = [
     'https://blx.best/auth/register',
     'https://www.ppyun.co/auth/register'
     # 国内可访问
-    # "https://www.kaikaiyun.icu/auth/register",
+    "https://www.kaikaiyun.icu/auth/register",
 ]
 
 if __name__ == '__main__':

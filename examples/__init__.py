@@ -6,13 +6,10 @@
 
 from .demo_geetest2 import demo_geetest2
 from .demo_geetest3 import demo_geetest3
-from .demo_traditional import demo_traditional
 
-__version__ = ['0.1.1']
+__version__ = ['0.2.3']
 
 __all__ = [
     # demo示例
     'demo_geetest2', 'demo_geetest3',
-    # 传统做法，参考对象
-    'demo_traditional',
 ]
