@@ -24,7 +24,7 @@
 
 - **【方案一】用户**
 
-  通过观看[ArmourGeeTest滑动验证](https://www.yuque.com/docs/share/70b51b3c-b434-4e7f-b18a-62c806108488?#)demo了解本项目的工作范围。
+  通过观看[ArmourGeeTest滑动验证](https://www.wolai.com/pbhA77godFuXjofA1QC7JG?theme=light)demo了解本项目的工作范围。
 
 - **【方案二】开发者**
 
